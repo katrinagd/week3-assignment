@@ -1,1 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="130.209px" style="enable-background:new 0 0 117.083 130.209;" version="1.1" viewBox="0 0 117.083 130.209" width="117.083px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Airbnb"><path d="   M53.754,110.919c0,0-7.982,11.758-22.006,15.17c-8.629,2.603-38.109-3.256-28.26-32.073c8.064-20.493,27.436-61.997,39.209-81.215   C49.008,0.936,64.38-5.404,75.542,13.396c12.621,20.697,31.229,61.982,38.402,81.92c7.736,21.809-13.014,45.434-38.83,26.438   c-10.088-6.393-26.036-25.438-33.01-42.476c-3.127-7.64-3.268-24.603,13.375-28.443c1.889-0.436,3.977-0.301,4.965-0.165   c11.754,1.626,14.344,9.97,15.531,13.437c4.668,17.576-11.436,34.46-11.436,34.46" style="fill:none;stroke:#000000;stroke-width:2.9989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"/></g><g id="Layer_1"/></svg>
+<svg width="117.083" height="130.209" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" fill="none" stroke="#ffffff" stroke-width="2.9989" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m53.754,111.12627c0,0 -7.982,11.758 -22.006,15.17c-8.629,2.603 -38.109,-3.256 -28.26,-32.073c8.064,-20.493 27.436,-61.997 39.209,-81.215c6.311,-11.865 21.683,-18.205 32.845,0.595c12.621,20.697 31.229,61.982 38.402,81.92c7.736,21.809 -13.014,45.434 -38.83,26.438c-10.088,-6.393 -26.036,-25.438 -33.01,-42.476c-3.127,-7.64 -3.268,-24.603 13.375,-28.443c1.889,-0.436 3.977,-0.301 4.965,-0.165c11.754,1.626 14.344,9.97 15.531,13.437c4.668,17.576 -11.436,34.46 -11.436,34.46"/>
+ </g>
+</svg>
