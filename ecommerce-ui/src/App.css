@@ -21,3 +21,6 @@ body{
 .text-bright {
   color: var(--lightBlue);
 }
+.logo {
+  width: 40px;
+}
