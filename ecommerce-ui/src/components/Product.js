@@ -6,31 +6,41 @@ import PropTypes from 'prop-types';
 
 export default class Product extends Component {
   render() {
-    const {title, image, payment:{cost}, inCart} = this.props.product;
+    const {id, title, image, payment:{cost}, inCart} = this.props.product;
     return (
       <ProductWrapper className="col-9 mx-auto col-lg-4 my-3">
         <div className="card">
-          <div className="img-container p-3" 
-          onClick={() => console.log('you clicked me on img container')
-        }>
-        <Link to="/details">
-          <img src= {image} alt="product" className="card-img-top"
-          />
-        </Link>
-        <button className="cart-btn" disabled={inCart ? true : false}
-        onClick={()=>{console.log('added to the cart');
-        }}>
-        {inCart ? (
-          <p className="text-capitalize mb-0" disabled>
-            {" "}
-            in cart
-          </p>
-        ) : (
-          <i className="fas fa-cart-plus" />
-          )}
-        </button>
-        
-          </div>
+        <ProductConsumer>
+            {value => {
+              return (
+                <div
+                  className="img-container p-5"
+                  onClick={() => value.handleDetail(id)}
+                >
+                  <Link to="/details">
+                    <img src={image} alt="" className="card-img-top" />
+                  </Link>
+                  <button
+                    className="cart-btn"
+                    disabled={inCart ? true : false}
+                    onClick={() => {
+                      value.addToCart(id);
+                      value.openModal(id);
+                    }}
+                  >
+                    {inCart ? (
+                      <p className="text-capitalize mb-0" disabled>
+                        in cart
+                      </p>
+                    ) : (
+                      <i className="fas fa-cart-plus" />
+                    )}
+                  </button>
+                </div>
+              );
+            }}
+          </ProductConsumer>
+
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">
               {title}
@@ -54,7 +64,7 @@ Product.propTypes = {
     cost:PropTypes.number,
     inCart:PropTypes.bool
   }).isRequired
-};
+}
 
 const ProductWrapper = styled.div`
   .card{

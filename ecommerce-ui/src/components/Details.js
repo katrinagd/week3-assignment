@@ -1,11 +1,77 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
+import { ProductConsumer } from "../context";
+import { ButtonContainer } from "./Button";
+import { Link } from "react-router-dom";
 export default class Details extends Component {
   render() {
     return (
-      <div>
-        <h3>Hello from Details</h3>
-      </div>
-    )
+      <ProductConsumer>
+        {value => {
+          const {
+            id,
+            title,
+            houseType,
+            image,
+            location:{city},
+            location:{country},
+            payment:{cost},
+            payment:{description},
+            host:{name},
+            inCart
+          } = value.detailProduct;
+
+          return (
+            <div className="container py-5">
+              {/* title */}
+              <div className="row">
+                <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
+                  <h1>{title}</h1>
+                </div>
+              </div>
+              {/* end of title */}
+              <div className="row">
+                <div className="col-10 mx-auto col-md-6 my-3">
+                  <img src={image} className="img-fluid" alt="" />
+                </div>
+                {/* prdoduct info */}
+                <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
+                  <h1>{title}</h1>
+                  <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
+                    <span className="text-uppercase">{houseType}</span>
+                  </h4>
+                  <p className="text-muted lead">{city}, {country}</p>
+                  <h4 className="text-blue">
+                    <strong>
+                      price : <span>$</span>
+                      {cost} 
+                    </strong>
+                  </h4>
+                  <p className="text-capitalize font-weight-bold mt-3 mb-0">
+                  {description}<br />
+                  Host: {name}<br />
+                  </p>
+                  {/* buttons */}
+                  <div>
+                    <Link to="/">
+                      <ButtonContainer>back to products</ButtonContainer>
+                    </Link>
+                    <ButtonContainer
+                      cart
+                      disabled={inCart ? true : false}
+                      onClick={() => {
+                        value.addToCart(id);
+                        value.openModal(id);
+                      }}
+                    >
+                      {inCart ? "in cart" : "add to cart"}
+                    </ButtonContainer>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }}
+      </ProductConsumer>
+    );
   }
 }
