@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { ProductConsumer } from "../context";
 import { ButtonContainer } from "./Button";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
 export default class Details extends Component {
   render() {
     return (
@@ -17,6 +19,9 @@ export default class Details extends Component {
             payment:{cost},
             payment:{description},
             host:{name},
+            host:{isSuperhost},
+            rating:{stars},
+            rating:{reviews},
             inCart
           } = value.detailProduct;
 
@@ -48,7 +53,9 @@ export default class Details extends Component {
                   </h4>
                   <p className="text-capitalize font-weight-bold mt-3 mb-0">
                   {description}<br />
-                  Host: {name}<br />
+                  {isSuperhost ? '🏆 Superhost' : 'Host'} - {name} <br />
+                  {'⭐️'.repeat(stars)}<br /> 
+                  {reviews} reviews 
                   </p>
                   {/* buttons */}
                   <div>
@@ -74,4 +81,20 @@ export default class Details extends Component {
       </ProductConsumer>
     );
   }
+}
+
+Details.propTypes = {
+  product:PropTypes.shape({
+    title:PropTypes.string,
+    houseType:PropTypes.string,
+    image:PropTypes.string,
+    city:PropTypes.string,
+    country:PropTypes.string,
+    cost:PropTypes.number,
+    name:PropTypes.string,
+    inCart:PropTypes.bool,
+    isSuperhost:PropTypes.bool,
+    stars:PropTypes.number,
+    reviews:PropTypes.number
+  }).isRequired
 }
