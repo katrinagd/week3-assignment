@@ -33,7 +33,7 @@ export default class Modal extends Component {
                                     closeModal();
                                 }}
                                 >
-                                Continue Shopping
+                                Store
                                 </ButtonContainer>
                             </Link>
                             <Link to="/cart">
